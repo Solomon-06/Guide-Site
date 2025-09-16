@@ -30,6 +30,7 @@ This site covers all characters available on the global server as of the latest 
 • Recommended Distances: What distances they best perform on (Mile, Med, Sprint, Long). <br>
 • Track Compatibility: Performance on Turf vs. Dirt tracks. <br>
 • Overall Abilities: How well the characters perform on all distances and paces. <br>
+• Player Opinions/Votes: Votes from players on multiple questions!
 </p>
 
 <h2 align="center">
@@ -80,6 +81,7 @@ Any help is greatly appreciated. Spot a mistake or have a suggestion for a build
 <p align="center">
  Disclaimer: This is a fan-made project. Umamusume Pretty Derby is a registered trademark of Cygames, Inc. This project is not officially endorsed or affiliated with Cygames. All game data is based on public knowledge and community research from the global server.<br>
 </p>
+
 
 
 
