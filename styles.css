@@ -1,0 +1,404 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #fff5f7;
+    color: #333;
+    line-height: 1.6;
+}
+
+a {
+  color: hotpink;
+  font-weight: bold;
+}
+
+#poll-container {
+    clear: both;
+}
+
+.opinions-button {
+background-color: #4a6fa5;
+color: white;
+border: none;
+padding: 10px 20px;
+border-radius: 4px;
+cursor: pointer;
+font-weight: bold;
+margin: 10px 0;
+transition: background-color 0.2s;
+        }
+        
+.opinions-button:hover {
+background-color: #3a5a80;
+        }
+
+.back-button {
+display: block;
+margin: auto;
+margin-bottom: 20px;
+padding: 8px 16px;
+background-color: #4a6fa5;
+color: white;
+ border: none;
+border-radius: 4px;
+cursor: pointer;
+padding: 10px 20px;
+border-radius: 4px;
+        }       
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.wiki-header {
+    background-color: #ff69b4;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 5px solid #ff1493;
+    margin-bottom: 30px;
+}
+
+.wiki-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.main-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.main-nav li {
+    margin: 0 15px;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.main-nav a:hover {
+    background-color: #ff1493;
+}
+
+.wiki-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.1);
+    margin-bottom: 30px;
+}
+
+.welcome-section, .recent-updates {
+    margin-bottom: 40px;
+}
+
+li{
+    text-align:center;
+    list-style:none;
+}
+
+h2 {
+    color: #ff69b4;
+    border-bottom: 2px solid #ffb6c1; 
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    text-align:center;
+}
+h3{
+    text-align:center;
+}
+
+p{
+    text-align:center;
+}
+
+.character-gallery {
+    margin: 40px 0;
+}
+
+.character-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.character-card {
+    width: 18%;
+    background-color: #ffe6ee;
+    border: 2px solid #ffb6c1;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.character-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+}
+
+.placeholder {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ff69b4;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+}
+
+.recent-updates ul {
+    list-style-position: inside;
+    padding-left: 20px;
+}
+
+.recent-updates li {
+    margin-bottom: 10px;
+}
+
+.wiki-footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #ff69b4;
+    color: white;
+    border-radius: 10px 10px 0 0;
+}
+
+.wiki-footer p {
+    margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+    .character-row {
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    
+    .character-card {
+        width: 30%;
+        margin-bottom: 15px;
+    }
+    
+    .main-nav ul {
+        flex-wrap: wrap;
+    }
+    
+    .main-nav li {
+        margin: 5px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .character-card {
+        width: 45%;
+    }
+    
+    .wiki-header h1 {
+        font-size: 2rem;
+    }
+}
+
+
+.character-container {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.character-details {
+    flex: 2;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.character-profile {
+    flex: 1;
+    position: sticky;
+    top: 20px;
+    align-self: flex-start;
+}
+
+.character-name {
+    color: #ff69b4;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #ffb6c1;
+    padding-bottom: 10px;
+}
+
+.character-section {
+    margin-bottom: 30px;
+}
+
+.character-section h2 {
+    color: #ff69b4;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 2px dashed #ffb6c1;
+}
+
+.profile-image {
+    margin-bottom: 20px;
+    text-align: center;
+
+}
+
+.profileimage img {
+    border-radius: 10px;
+    border: 3px solid #ff69b4;
+    max-width: 100%;
+    height: auto;
+      display: block;
+    margin: auto;
+}
+
+.profile-box {
+    background: #ffe6ee;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.profilename {
+    font-size: 1.5rem;
+    color: #ff1493;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.profilesubtitle {
+    font-style: italic;
+    padding-bottom: 15px;
+    color: #666;
+    text-align:center;
+}
+
+.infolabel {
+    font-weight: bold;
+    padding: 8px 5px;
+    width: 40%;
+    color: #ff69b4;
+}
+
+.infovalue {
+    padding: 8px 5px;
+    border-left: 1px solid #ffb6c1;
+}
+
+.build-section h3,
+.race-strategy h3 {
+    color: #ff1493;
+    margin: 15px 0 10px 0;
+    font-size: 1.2rem;
+}
+
+.gooddistance2{
+    background-color: rgb(94, 245, 94);
+    border-radius:25px;
+    width:80px;
+    height:30px;
+    display: block;
+    margin: auto;
+}
+
+.okdistance2{
+    background-color: rgb(248, 149, 18);
+    border-radius:25px;
+    width:120px;
+     height:30px;
+    display:block;
+    margin: auto;
+}
+
+.worstdistance2{
+    background-color: rgb(248, 22, 22);
+    border-radius:25px;
+    width:150px;
+     height:40px;
+    display: block;
+    margin: auto;
+}
+
+.goodpace{
+    background-color: rgb(94, 245, 94);
+    border-radius:25px;
+    width:80px;
+    height:30px;
+     text-align:center;
+    display: block;
+    margin: auto;
+}
+
+.okpace{
+    background-color: rgb(248, 149, 18);
+    border-radius:25px;
+    width:120px;
+     height:30px;
+     text-align:center;
+    display: block;
+    margin: auto;
+}
+
+.worstpace{
+    background-color: rgb(248, 22, 22);
+    border-radius:25px;
+    width:150px;
+     height:40px;
+    text-align:center;
+    display: block;
+    margin: auto;
+}
+
+.triangle1{
+   float:left;
+}
+
+.triangle2{
+    float:right;
+}
+
+
+
+
+@media (max-width: 768px) {
+    .character-container {
+        flex-direction: column;
+    }
+    
+    .character-profile {
+        position: static;
+        order: -1;
+    }
+    
+    .profile-image {
+        text-align: center;
+    }
+    
+    .profile-image img {
+        max-width: 300px;
+    }
+}

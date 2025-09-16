@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umamusume Wiki</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+<div class="wrapper">
+        <header class="wiki-header">
+             <h1>Umamusume Guides</h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                      <li><a href="#" id="random-character">Random Character</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="wiki-content">
+              <button class="back-button" onclick="window.history.back()">← Back to Character</button>
+
+<div class="character-container">
+                
+                <div class="character-details">
+                    <h1 class="profilename"></h1>
+                    
+                    <section class="character-section">
+
+                      <div id="poll-container"></div>
+
+                      <section class="character-section">
+                   
+                    </section>
+                    
+                    <section class="character-section">
+                       
+                        <div class="build-section">
+                     
+                        </div>
+                    </section>
+                    
+                    <section class="character-section">
+                        <div class="race-strategy">
+                   
+                            
+                            
+                            
+                       
+ 
+                         
+
+                        
+                    </div>
+
+<div id="poll-container"></div>
+
+                    </section>
+                  
+                </div>
+                
+                <!-- Character Info Box -->
+                <div class="character-profile">
+                    <div class="profileimage">
+                        <img src="character-image.jpg" width="300">
+                    </div>
+                    
+                    <div class="profile-box">
+                        <table class="info-table">
+                            <tr>
+                                <th colspan="2" class="profilename"></th>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="profilesubtitle"></td>
+                            </tr>
+                            <tr>
+                                <td class="info-label">Rarity</td>
+                                <td class="rarity"></td>
+                            </tr>
+                            <tr>
+                                <td class="info-label">Type</td>
+                                <td class="type"></td>
+                            </tr>
+                            <tr>
+                                <td class="info-label">Distance</td>
+                                <td class="distance"></td>
+                            </tr>
+                            <tr>
+                                <td class="info-label">Style</td>
+                                <td class="style"></td>
+                            </tr>
+                            <tr>
+                                <td class="info-label">Birthday</td>
+                                <td class="birthday"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <footer class="wiki-footer">
+            <p>&copy; 2023 Umamusume Wiki. All rights reserved.</p>
+            <p>Umamusume is a registered trademark of Cygames.</p>
+        </footer>
+    </div>
+
+<script src="script.js">
+
+</script>
+
+<script>
+
+    function getCurrentCharacter() {
+        return localStorage.getItem('currentCharacter');
+    }
+
+
+    function updateCharacterInfo() {
+        const currentCharacter = getCurrentCharacter();
+        
+        if (currentCharacter && characters[currentCharacter]) {
+            const char = characters[currentCharacter];
+            
+            document.querySelectorAll('.profilename').forEach(el => {
+                el.textContent = char.profilename;
+            });
+            
+            document.querySelector('.profilesubtitle').textContent = char.profilesubtitle;
+            document.querySelector('.profileimage img').src = char.profileimage;
+            document.querySelector('.profileimage img').alt = char.profilename;
+            document.querySelector('.rarity').textContent = char.rarity;
+            document.querySelector('.type').textContent = char.type;
+            document.querySelector('.distance').textContent = char.distance;
+            document.querySelector('.style').textContent = char.style;
+            document.querySelector('.birthday').textContent = char.birthday;
+          
+            const pollContainer = document.getElementById('poll-container');
+            if (pollContainer && char.pollEmbed) {
+                pollContainer.innerHTML = char.pollEmbed;
+            }
+        } else {
+
+            const pollContainer = document.getElementById('poll-container');
+            if (pollContainer) {
+                pollContainer.innerHTML = '<p>Please select a character first from the main page.</p>';
+            }
+        }
+    }
+
+
+    window.addEventListener("load", function() {
+        updateCharacterInfo();
+        
+        
+        const characterNames = [
+            "airgroove", "tachyon", "biwa", "curren", "scarlet",
+            "elcondor", "goldship", "grasswonder", "haru", "halo",
+            "maruzensky", "matikane", "mayano", "mcqueen", "ryan",
+            "bourbon", "narita", "taishin", "nature", "oguri",
+            "riceshower", "bakushin", "falcon", "suzuka", "specialweek",
+            "supercreek", "rudolf", "opera", "taiki", "teio",
+            "vodka", "ticket"
+        ];
+
+        const randomLink = document.getElementById("random-character");
+
+        randomLink.addEventListener("click", function(e) {
+            e.preventDefault(); 
+            
+            const randomIndex = Math.floor(Math.random() * characterNames.length);
+            const randomChar = characterNames[randomIndex];
+            
+          
+            localStorage.setItem('currentCharacter', randomChar);
+            
+            
+            const basePath = window.location.origin;
+            let characterURL;
+            
+            if (basePath.includes('github.io')) {
+                characterURL = `${basePath}/Umamusume-Guides/character.html?char=${randomChar}`;
+            } else {
+                characterURL = `${basePath}/character.html?char=${randomChar}`;
+            }
+            
+            window.location.href = characterURL; 
+        });
+    });
+</script>
+
+</body>
+</html>

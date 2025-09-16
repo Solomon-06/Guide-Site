@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umamusume Wiki</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+<div class="wrapper">
+        <header class="wiki-header">
+             <h1>Umamusume Guides</h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                      <li><a href="#" id="random-character">Random Character</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="wiki-content">
+              <div style="text-align: center; margin: 20px 0;">
+                <button class="opinions-button" id="player-opinions-btn">Player Opinions</button>
+            </div>
+
+<div class="character-container">
+                
+                <div class="character-details">
+                    <h1 class="profilename"></h1>
+                    
+                    <section class="character-section">
+                        <h2>Personality</h2>
+                        <p class="personality"></p>
+                    </section>
+
+                      <section class="character-section">
+                        <h2>Traits and Quirks:</h2>
+                        <p class="trait1"></p>
+                        <p class="trait2"></p>
+                        <p class="trait3"></p>
+                        <p class="trait4"></p>
+                        <p class="trait5"></p>
+                    </section>
+                    
+                    <section class="character-section">
+                        <h2>Optimal Build</h2>
+                        <div class="build-section">
+                            <h3>Stats Priority</h3>
+                            <ul>
+                                <li class="speedpriority"><strong>Speed:</strong></li>
+                                <li class="staminapriority"><strong>Stamina:</strong></li>
+                                <li class="powerpriority"><strong>Power:</strong></li>
+                                <li class="gutspriority"><strong>Guts:</strong></li>
+                                <li class="witspriority"><strong>Wits:</strong></li>
+                            </ul>
+                            
+                            <h3>Recommended Skills</h3>
+                            <ul>
+                                <li class="skill1"><strong>Skill 1:</strong></li>
+                                <li class="skill2"><strong>Skill 2:</strong></li>
+                                <li class="skill3"><strong>Skill 3:</strong></li>
+                            </ul>
+                            
+                            <h3>Training Focus</h3>
+                            <p class="besttotrain"></p>
+                        </div>
+                    </section>
+                    
+                    <section class="character-section">
+                        <h2>How to Race Her</h2>
+                        <div class="race-strategy">
+                            <h3>Race Strategy</h3>
+                            <p class="racestrategy"></p>
+                            
+                            <h3>Recommended Distances</h3>
+                            <div class="distance-chart">
+                               <p class="bestdistance"></p>
+                               <p class="okdistance"></p>
+                               <p class="worstdistance"></p>
+                            </div>
+                            
+                            <h3>Track Compatibility</h3>
+                            <p class='track'></p>
+
+                            <h3>Overall Abilities</h3>
+                            
+                        <div class="triangle1">
+                            <p class='gooddistance2'></p>
+                            <p class='okdistance2'></p>
+                            <p class='worstdistance2'></p>
+                         </div>
+ 
+                         <div class="triangle2">
+                            <p class='goodpace'></p>
+                            <p class='okpace'></p>
+                            <p class='worstpace'></p>
+                        </div>
+
+                        
+                    </div>
+
+
+
+                    </section>
+                  
+                </div>
+                
+                <!-- Character Info Box -->
+                <div class="character-profile">
+                    <div class="profileimage">
+                        <img src="character-image.jpg" width="300">
+                    </div>
+                    
+                    <div class="profile-box">
+                        <table class="info-table">
+                            <tr>
+                                <th colspan="2" class="profilename"></th>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="profilesubtitle"></td>
+                            </tr>
+                            <tr>
+                                <td class="info-label">Rarity</td>
+                                <td class="rarity"></td>
+                            </tr>
+                            <tr>
+                                <td class="info-label">Type</td>
+                                <td class="type"></td>
+                            </tr>
+                            <tr>
+                                <td class="info-label">Distance</td>
+                                <td class="distance"></td>
+                            </tr>
+                            <tr>
+                                <td class="info-label">Style</td>
+                                <td class="style"></td>
+                            </tr>
+                            <tr>
+                                <td class="info-label">Birthday</td>
+                                <td class="birthday"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <footer class="wiki-footer">
+            <p>&copy; 2023 Umamusume Wiki. All rights reserved.</p>
+            <p>Umamusume is a registered trademark of Cygames.</p>
+        </footer>
+    </div>
+
+<script src="script.js">
+
+</script>
+<script>
+
+    function getCurrentCharacter() {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get('char');
+    }
+
+    function handleOpinionsButtonClick() {
+        const currentCharacter = getCurrentCharacter();
+        
+        if (currentCharacter) {
+
+            localStorage.setItem('currentCharacter', currentCharacter);
+            
+
+            window.location.href = 'opinions.html';
+        } else {
+            alert('No character selected. Please select a character first.');
+        }
+    }
+
+    window.addEventListener("load", function() {
+
+        const opinionsButton = document.getElementById('player-opinions-btn');
+        if (opinionsButton) {
+            opinionsButton.addEventListener('click', handleOpinionsButtonClick);
+        }
+        
+
+        const characterNames = [
+            "airgroove", "tachyon", "biwa", "curren", "scarlet",
+            "elcondor", "goldship", "grasswonder", "haru", "halo",
+            "maruzensky", "matikane", "mayano", "mcqueen", "ryan",
+            "bourbon", "narita", "taishin", "nature", "oguri",
+            "riceshower", "bakushin", "falcon", "suzuka", "specialweek",
+            "supercreek", "rudolf", "opera", "taiki", "teio",
+            "vodka", "ticket"
+        ];
+
+        const randomLink = document.getElementById("random-character");
+
+        randomLink.addEventListener("click", function(e) {
+            e.preventDefault(); 
+            
+            const randomIndex = Math.floor(Math.random() * characterNames.length);
+            const randomChar = characterNames[randomIndex];
+            
+            const basePath = window.location.origin;
+            let characterURL;
+            
+            if (basePath.includes('github.io')) {
+                characterURL = `${basePath}/Umamusume-Guides/character.html?char=${randomChar}`;
+            } else {
+                characterURL = `${basePath}/character.html?char=${randomChar}`;
+            }
+            
+            console.log("Redirecting to:", characterURL);
+            window.location.href = characterURL; 
+        });
+    });
+</script>
+
+<script>
+
+    function passCharacterToOpinions() {
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const characterId = urlParams.get('char');
+        
+        if (characterId) {
+
+            localStorage.setItem('selectedCharacter', characterId);
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const opinionsBtn = document.getElementById('player-opinions-btn');
+        if (opinionsBtn) {
+            opinionsBtn.addEventListener('click', passCharacterToOpinions);
+        }
+    });
+</script>
+
+</body>
+</html>
