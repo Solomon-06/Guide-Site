@@ -8,7 +8,7 @@ Live Site: https://solomon-06.github.io/Guide-Site/
 </p>
 
 ![Umamusume Site Preview](https://i.postimg.cc/76yk3S8g/bandicam-2025-09-03-10-51-29-863.jpg)
-![Umamusume Site Preview](https://i.postimg.cc/pLTzvnSY/bandicam-2025-09-03-10-51-38-956.jpg)
+![Umamusume Site Preview](https://i.ibb.co/ymZdyQrR/bandicam-2025-09-16-17-26-56-496.jpg)
 
 
 <p align="center">
@@ -80,6 +80,7 @@ Any help is greatly appreciated. Spot a mistake or have a suggestion for a build
 <p align="center">
  Disclaimer: This is a fan-made project. Umamusume Pretty Derby is a registered trademark of Cygames, Inc. This project is not officially endorsed or affiliated with Cygames. All game data is based on public knowledge and community research from the global server.<br>
 </p>
+
 
 
 
